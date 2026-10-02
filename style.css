@@ -315,6 +315,10 @@ post page media query*//* post page media query*/
         max-width: 100vw;
     }
 
+    .img-container{
+       width: 60%;
+    }
+
     .big{
         display: block;
     }
