@@ -1,0 +1,359 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+.container{
+    max-width: 100vw;
+    margin: 0  auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "head"
+    "main"
+    "foot"
+    ;
+}
+
+/*topography*/
+
+h1{
+    font-size: 1.8rem;
+}
+h2{
+    font-size: 1.5rem;
+}
+
+h3{
+    font-size: 1rem;
+}
+
+p{
+    font-size: 1rem;
+}
+
+/*header*/
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.logo-container{
+    display: flex;
+   width: 40%;
+   align-items: center;
+   gap: 5px;
+   margin-left: 0.8em;
+}
+
+.logo-img-container{
+    max-width: 10vw;
+}
+.logo{
+    width: 100%;
+    object-fit: contain;
+}
+
+/*header nav*/
+
+
+
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    gap: 2em;
+    margin-right: 2em;
+}
+
+nav li{
+    display: block;
+    list-style-type: none;
+    padding: 0.2em;
+
+}
+
+nav li:hover{
+    background-color: grey;
+}
+
+nav a{
+    text-decoration: none;
+    color: #090909;
+    font-weight: 500;
+}
+
+
+
+/*mobile screen grid*/
+header{
+    grid-area: head;
+
+}
+
+footer{
+    grid-area: foot;
+}
+
+
+
+/*main*/
+.main{
+    display: grid;
+    grid-area: main;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "hero"
+    "blog1"
+    "blog2"
+    "blog3"
+    ;
+    gap: 20px;
+}
+
+
+
+
+/*hero section*/
+.hero-section{
+    background-image: url('./images/article-image-hero.png');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    grid-area: hero;
+    max-width: 100vw;
+    max-height: 70vh;
+    width: 100%;
+    color: white;
+    padding: 3em 2em 1em 1em;
+}
+
+
+
+
+.blog-one, .blog-two, .blog-three{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*blog-one*/
+
+.blog-one {
+  grid-area: blog1;
+}
+
+.blog-two {
+  grid-area: blog2;
+}
+
+.blog-three {
+  grid-area: blog3;
+}
+
+/*blog container*/
+.blog{
+    width: 90%;
+    max-width: 90vw;
+    margin: 1em auto 0;
+}
+
+.blog h2, p{
+    margin-bottom: 0em;
+    margin-top: 0.5em;
+
+}
+
+.blog p{
+    color: #505050;
+}
+
+.big{
+    display: none;
+}
+
+/*img*/
+.img-container{
+    max-width: 90vw;
+    width: 100%;
+
+
+}
+
+.post-img{
+    width: 100%;
+    object-fit: cover;
+     border-radius: 8px;
+}
+
+/*link*/
+
+.main a{
+    text-decoration: none;
+}
+.main .view{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+
+/*footer*/
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+.footer h3, p{
+    margin-bottom: 0em;
+    margin-top: 0em;
+}
+
+/*post page*/
+
+
+.post {
+  grid-area: post;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em 1.4em;
+
+}
+
+.post .img-container{
+    max-width: 90vw;
+    margin: 2em auto;
+    width: 90%;
+}
+.blog-one {
+  grid-area: blog1;
+}
+
+.blog-two {
+  grid-area: blog2;
+}
+
+.blog-three {
+  grid-area: blog3;
+}
+
+.main2{
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+    "post"
+    "blog1"
+    "blog2"
+    "blog3"
+    ;
+
+}
+
+/*profile page*/
+.profile-container{
+    max-width: 30vw;
+}
+.profile-img{
+    width: 100%;
+    object-fit: contain;
+}
+
+/*
+
+
+post page media query*//* post page media query*/
+@media(min-width: 700px){
+  .main2 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 3 equal columns */
+    grid-template-areas:
+      "post post post post post post"
+      "blog1  blog1 blog2 blog2 blog3 blog3";
+    gap: 2px; /* Optional: Adds space between the columns */
+  }
+
+  .post {
+    grid-area: post;
+    width: 100%;
+  }
+
+ .main2 .blog-one {
+    grid-area: blog1;
+  }
+
+ .main2 .blog-two {
+    grid-area: blog2;
+  }
+
+ .main2  .blog-three {
+    grid-area: blog3;
+  }
+}
+
+
+
+
+/*media query*/@media (min-width: 700px) {
+
+    .blog{
+        width: 95%;
+        max-width: 100vw;
+    }
+
+    .big{
+        display: block;
+    }
+  .main a{
+      display: none;
+  }
+
+  .main {
+    display: grid;    /* 2fr or 1fr works here, repeat(6, 1fr) is more standard */
+    grid-template-columns: repeat(12, 2fr);
+    grid-template-areas:
+      "hero     hero     hero     hero     hero     hero   hero     hero     hero     hero     hero     hero"
+      "blog-one blog-one blog-one blog-one blog-two blog-two blog-two blog-two blog-three blog-three blog-three blog-three"
+      "blog-four blog-four blog-four blog-four blog-five blog-five blog-five blog-five blog-six blog-six blog-six blog-six";
+  }
+
+  .hero-section{
+      grid-area: hero;
+  }
+
+  .main .blog-one {
+    grid-area: blog-one;
+  }
+  .main .blog-two {
+    grid-area: blog-two;
+  }
+  .main .blog-three {
+    grid-area: blog-three;
+  }
+
+  .main .blog-four{
+      grid-area: blog-four;
+  }
+
+  .main .blog-five{
+      grid-area: blog-five;
+  }
+
+  .main .blog-six{
+      grid-area: blog-six;
+  }
+}
