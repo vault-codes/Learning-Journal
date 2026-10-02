@@ -315,7 +315,9 @@ post page media query*//* post page media query*/
         max-width: 100vw;
     }
 
-
+  .about-img{
+      width: 70%;
+  }
 
     .big{
         display: block;
